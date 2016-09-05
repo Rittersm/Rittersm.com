@@ -1,3 +1,548 @@
-// Place all the styles related to the User controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$slate: #323131;
+$amber: #e2a337;
+$light-slate: rgb(74, 74, 74);
+
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(79, 79, 79, 0.44),
+      rgba(102, 102, 102, 0.47)
+      ),
+      image-url("background") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+    .navbar-default{
+      background-color: transparent;
+      border-color: transparent;
+    }
+}
+
+@media(max-width:767px) {
+  .navbar-default{
+    background-color: $slate;
+    border-color: rgb(0, 0, 0);
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: $amber;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 25px;
+}
+.navbar-default .navbar-brand{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 30px
+}
+.top-nav-collapse .navbar-brand{
+  color: $amber;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: $amber
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: $slate;
+  background-color: $amber;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $amber;
+  background-color: transparent;
+}
+
+.top-nav-collapse{
+  background-color: $slate;
+  border-color: rgb(0, 0, 0);
+}
+
+.navbar-default .navbar-toggle{
+  border-color: $slate;
+}
+
+.navbar-default .navbar-toggle:hover{
+  background-color: $slate;
+}
+.navbar-default .navbar-toggle:focus{
+  background-color: $slate;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: $amber;
+}
+
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
+of those sections to manage the look and feel of the site. */
+@media(min-width:1000px){
+  .intro-section {
+      height: 100%;
+      padding-top: 100px;
+      padding-left: 30%;
+  }
+
+  .intro-section h2{
+    font-family: 'Amatic SC', cursive;
+    font-size: 8vw;
+    font-weight: bold;
+  }
+}
+@media(max-width:1000px){
+  .intro-section{
+    height: 100%;
+    padding-top: 100px;
+    padding-left: 20%;
+  }
+
+  .intro-section h2{
+    font-family: 'Amatic SC', cursive;
+    font-size: 85px;
+    font-weight: bold;
+  }
+}
+@media(max-width:700px){
+  .intro-section{
+    height: 100%;
+    padding-top: 100px;
+    padding-left: 0%;
+  }
+}
+
+@media(min-width:522px){
+  .intro-section h1{
+    font-size: 200px;
+    font-weight: bolder;
+    font-family: 'Amatic SC', cursive;
+  }
+}
+
+@media(max-width:522px){
+  .intro-section h1{
+    font-size: 150px;
+    font-weight: bold;
+    font-family: 'Amatic SC', cursive;
+  }
+  .intro-section h2{
+    font-size: 65px;
+    font-family: 'Amatic SC', cursive;
+  }
+  .intro-section{
+    height: 100%;
+    padding-top: 175px;
+    padding-left: 0%;
+  }
+}
+.about-section{
+  min-height: 100%;
+  background-color: $slate;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media(min-width:600px){
+  .about-section h1,
+  .about-section h3{
+    color: $amber;
+    font-size: 35px;
+    font-family: 'Amatic SC', cursive;
+  }
+}
+@media(max-width:600px){
+  .about-section h1,
+  .about-section h3{
+    color: $amber;
+    font-size: 28px;
+    font-family: 'Amatic SC', cursive;
+  }
+}
+
+.portfolio-section {
+    min-height: 100%;
+    padding-top: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.portfolio-section h1{
+  color: $slate;
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+
+.skills-section {
+    min-height: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-color: $slate;
+}
+.skills-section h1{
+  color: $amber;
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+
+@media(min-width:1200px){
+  .lang-logo{
+    margin-top: 5px;
+  }
+  .js-logo{
+    padding-top: 15px;
+  }
+}
+
+@media(max-width:1199px){
+  .lang-logo{
+    margin-top: 15px;
+  }
+  .js-logo{
+    padding-top: 15px;
+  }
+}
+
+@media(max-width:991px){
+  .lang-logo{
+    margin-top: 30px;
+  }
+  .js-logo{
+    margin-top: 40px;
+  }
+}
+
+@media(max-width:769px){
+  .lang-skill{
+    padding: 30px;
+    text-align: center;
+  }
+  .lang-logo{
+    margin-top: 0px;
+  }
+  .js-logo{
+    margin-top: 0px;
+  }
+}
+
+.skills-section hr{
+  border-color: $amber;
+  border-width: medium;
+}
+
+.lang-logo{
+  display: inline-block;
+  max-width: 200px;
+}
+.js-logo{
+  display: inline-block;
+  max-width: 200px;
+}
+
+.lang-desc{
+  display: inline-block;
+}
+
+.lang-desc h2{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  font-weight: bold;
+}
+.lang-desc h4{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}
+
+.blog-section {
+    min-height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: transparent;
+}
+
+.post .container-fluid{
+  background-color: $slate;
+  padding-bottom: 30px;
+}
+
+.post .container{
+  background-color: $slate;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.post .container-fluid h1,
+.post .container h1{
+  color: $amber;
+  font-size: 60px;
+  font-family: 'Amatic SC', cursive;
+}
+.blog-section h4{
+  color: $amber;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+}
+.blog-section h3{
+  color: $amber;
+  font-size: 40px;
+  font-family: 'Amatic SC', cursive;
+}
+.blog-section h1{
+  color: $slate;
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+.blog-section a{
+  color: $slate;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+
+.seperator h2{
+  color: $slate;
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+  margin-bottom: 0px;
+  margin-top: -5px;
+}
+
+.contact-section {
+    min-height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $slate;
+}
+.contact-section h1{
+  color: $amber;
+  font-size: 75px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+
+.contact-section hr{
+  border-color: $amber;
+  border-width: medium;
+}
+
+.contact-section h3{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+.contact-section h4{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px
+}
+
+.contact-form{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.form-control{
+  background-color: $light-slate;
+  color: $amber;
+  border-radius: 8px;
+  border-color: $light-slate;
+}
+
+input::-webkit-input-placeholder {
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+input:-ms-input-placeholder {
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+textarea::-webkit-input-placeholder {
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+
+textarea:-ms-input-placeholder {
+color: $amber !important;
+font-family: 'Amatic SC', cursive;
+font-size: 20px;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus{
+  background-color: $amber;
+  color: $slate;
+  border-color: $slate;
+  outline: 0;
+}
+.btn-primary:active{
+  background-color: $amber;
+  color: $slate;
+  border-color: $slate;
+  outline: 0;
+}
+.btn-primary:focus{
+  background-color: $amber;
+  color: $slate;
+  border-color: $slate;
+  outline: 0;
+}
+.btn-primary:hover{
+  background-color: $amber;
+  color: $slate;
+  border-color: $slate;
+  outline: 0;
+}
+.btn-primary{
+  background-color: $light-slate;
+  color: $amber;
+  border-color: $slate;
+}
+
+.footer-bottom{
+  min-height: 100%;
+  background-color: $slate;
+  border-top: 4px solid $light-slate;
+}
+.footer-bottom a{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 22px;
+}
+.admin{
+  margin-top: 5px;
+}
+
+.admin h5{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+.footer-bottom li h5,
+.footer-bottom li{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+.footer-bottom li i{
+  font-size: 25px !important;
+}
+
+.modal-content{
+  background-color: $slate;
+}
+.modal-title{
+  color: $amber;
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+}
+
+.image-box{
+  margin-bottom: 30px;
+}
+
+.portfolio-box {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.portfolio-box .portfolio-box-caption {
+  color: $amber;
+  opacity: 0;
+  display: block;
+  background: $slate;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  padding: 0 15px;
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  font-size: 18px;
+}
+.portfolio-box:hover .portfolio-box-caption {
+  opacity: 1;
+}
+.portfolio-box:focus {
+  outline: none;
+}
+@media (min-width: 768px) {
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+    font-size: 16px;
+  }
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+    font-size: 22px;
+  }
+}

@@ -5,12 +5,12 @@ class UserSessionController < ApplicationController
   if @user
     if @user.authenticate(params[:user][:password])
       session[:username] = @user.username
-      render json: @user, status: :accepted
+      redirect_to root_path
     else
-      render json: {error: "Incorrect Password"}, status: :unprocessable_entity
+      redirect_to root_path
     end
   else
-    render json: {error: "User Not Found"}, status: :unprocessable_entity
+    redirect_to root_path
   end
 end
 

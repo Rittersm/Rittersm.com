@@ -1,0 +1,18 @@
+<%= form_for @contact, url: url_for(:controller => :contacts, :action => :create), remote: true, 'data-type': :json do |f| %>
+  <fieldset class="form-group">
+    <%= f.text_field :name, :class => "form-control", :placeholder => "Name" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.text_field :phone, :class => "form-control", :placeholder => "Phone" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.text_field :company, :class => "form-control", :placeholder => "Company" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.text_area :message, :class => "form-control", rows: 10, :placeholder => "Message" %>
+  </fieldset>
+  <%= f.submit 'Contact Me', :class => "btn btn-primary" %>
+<% end %>
