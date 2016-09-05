@@ -224,26 +224,30 @@
           </div>
         </div>
       </div>
-      <div class="post">
-        <div class="container">
-          <div class="row text-center">
-            <%= attachment_image_tag(@blog, :header_image, :class => "img-responsive") %>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <h1><%= @blog.title %></h1>
+      <% if @blog.any? %>
+        <div class="post">
+          <div class="container">
+            <div class="row text-center">
+              <%= attachment_image_tag(@blog, :header_image, :class => "img-responsive") %>
             </div>
-            <div class="col-xs-12">
-              <h4><%= @blog.created_at.strftime('%e %b %Y %H:%M:%S%p') %></h4>
+            <div class="row">
+              <div class="col-xs-12">
+                <h1><%= @blog.title %></h1>
+              </div>
+              <div class="col-xs-12">
+                <h4><%= @blog.created_at.strftime('%e %b %Y %H:%M:%S%p') %></h4>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <h3><%= simple_format(@blog.body) %></h3>
+            <div class="row">
+              <div class="col-xs-12">
+                <h3><%= simple_format(@blog.body) %></h3>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% else %>
+        <h3>No blog posts... yet</h3>
+      <% end %>  
       <br>
       <div class="container">
         <div class="col-xs-12 text-center">
