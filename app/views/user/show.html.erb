@@ -81,7 +81,7 @@
         <div class="row no-gutter popup-gallery">
           <div class="col-sm-6 image-box">
             <a href="https://github.com/Rittersm/SurfnPaddleRails" class="portfolio-box">
-              <img src="assets/demoticdeveloper.jpg" class="img-responsive" alt="">
+              <img src="demoticdeveloper.jpg" class="img-responsive" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -96,7 +96,7 @@
           </div>
           <div class="col-sm-6 image-box">
             <a href="https://github.com/Rittersm/ChirpChirp" class="portfolio-box">
-              <img src="assets/chirp.jpg" class="img-responsive" alt="">
+              <img src="chirp.jpg" class="img-responsive" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -111,7 +111,7 @@
           </div>
           <div class="col-sm-6 image-box">
             <a href="https://github.com/sockapalooza/SockapaloozaRails" class="portfolio-box">
-              <img src="assets/sockapalooza.jpg" class="img-responsive" alt="">
+              <img src="sockapalooza.jpg" class="img-responsive" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -126,7 +126,7 @@
           </div>
           <div class="col-sm-6 image-box">
             <a href="https://github.com/Rittersm/LiveDiet.com" class="portfolio-box">
-              <img src="assets/livediet.jpg" class="img-responsive" alt="">
+              <img src="livediet.jpg" class="img-responsive" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -152,7 +152,7 @@
         <div class="lang-skill">
           <div class="row">
             <div class="col-sm-3 lang-logo">
-              <img src="assets/rails-logo.png" class="img-responsive" alt="">
+              <img src="rails-logo.png" class="img-responsive" alt="">
             </div>
             <div class="col-sm-9 lang-desc">
               <div class="row">
@@ -168,7 +168,7 @@
         <div class="lang-skill">
           <div class="row">
             <div class="col-sm-3 lang-logo">
-              <img src="assets/html-logo.png" class="img-responsive" alt="">
+              <img src="html-logo.png" class="img-responsive" alt="">
             </div>
             <div class="col-sm-9 lang-desc">
               <div class="row">
@@ -184,7 +184,7 @@
         <div class="lang-skill">
           <div class="row">
             <div class="col-sm-3 lang-logo">
-              <img src="assets/css-logo.png" class="img-responsive" alt="">
+              <img src="css-logo.png" class="img-responsive" alt="">
             </div>
             <div class="col-sm-9 lang-desc">
               <div class="row">
@@ -200,7 +200,7 @@
         <div class="lang-skill">
           <div class="row">
             <div class="col-sm-3 js-logo">
-              <img src="assets/js-logo.png" class="img-responsive" alt="">
+              <img src="js-logo.png" class="img-responsive" alt="">
             </div>
             <div class="col-sm-9 lang-desc">
               <div class="row">
@@ -211,6 +211,43 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h1>Blog</h1>
+          </div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="container">
+          <div class="row text-center">
+            <%= attachment_image_tag(@blog, :header_image, :class => "img-responsive") %>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <h1><%= @blog.title %></h1>
+            </div>
+            <div class="col-xs-12">
+              <h4><%= @blog.created_at.strftime('%e %b %Y %H:%M:%S%p') %></h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <h3><%= simple_format(@blog.body) %></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="col-xs-12 text-center">
+          <a href="/blogs">All Blogs</a>
         </div>
       </div>
     </section>
