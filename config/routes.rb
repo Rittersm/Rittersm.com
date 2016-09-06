@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :user, only: [:show, :create]
+  resources :user, only: [:show]
   resources :contacts, only: [:create]
   resources :blogs, only: [:show, :index]
 
