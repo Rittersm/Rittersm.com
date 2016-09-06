@@ -19,6 +19,11 @@ html {
     height: 100%;
 }
 
+.main{
+  display:block;
+  overflow:auto;
+}
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -97,7 +102,6 @@ The padding is very important to make sure the scrollspy picks up the right area
 of those sections to manage the look and feel of the site. */
 @media(min-width:1000px){
   .intro-section {
-      height: 100%;
       padding-top: 100px;
       padding-left: 30%;
   }
@@ -123,7 +127,6 @@ of those sections to manage the look and feel of the site. */
 }
 @media(max-width:700px){
   .intro-section{
-    height: 100%;
     padding-top: 100px;
     padding-left: 0%;
   }
@@ -148,13 +151,11 @@ of those sections to manage the look and feel of the site. */
     font-family: 'Amatic SC', cursive;
   }
   .intro-section{
-    height: 100%;
     padding-top: 175px;
     padding-left: 0%;
   }
 }
 .about-section{
-  min-height: 100%;
   background-color: $slate;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -178,7 +179,6 @@ of those sections to manage the look and feel of the site. */
 }
 
 .portfolio-section {
-    min-height: 100%;
     padding-top: 20px;
     text-align: center;
     background-color: transparent;
@@ -192,7 +192,6 @@ of those sections to manage the look and feel of the site. */
 }
 
 .skills-section {
-    min-height: 100%;
     padding-top: 30px;
     padding-bottom: 50px;
     background-color: $slate;
@@ -275,7 +274,6 @@ of those sections to manage the look and feel of the site. */
 }
 
 .blog-section {
-    min-height: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: transparent;
@@ -331,7 +329,6 @@ of those sections to manage the look and feel of the site. */
 }
 
 .contact-section {
-    min-height: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: $slate;
@@ -449,7 +446,6 @@ font-size: 20px;
 }
 
 .footer-bottom{
-  min-height: 100%;
   background-color: $slate;
   border-top: 4px solid $light-slate;
 }
