@@ -12,7 +12,7 @@ class UserController < ApplicationController
   # end
 
   def show
-    @blog = Blog.last
+    @blog = Blog.find_by(status: "Active")
   end
 
   private

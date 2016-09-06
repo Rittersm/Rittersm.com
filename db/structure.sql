@@ -55,7 +55,8 @@ CREATE TABLE blogs (
     updated_at timestamp without time zone NOT NULL,
     title character varying,
     body text,
-    header_image_id character varying
+    header_image_id character varying,
+    status character varying
 );
 
 
@@ -281,6 +282,6 @@ CREATE INDEX index_refile_attachments_on_oid ON refile_attachments USING btree (
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20160903232354'), ('20160903232720'), ('20160903232738'), ('20160903232821'), ('20160903232834'), ('20160904000429'), ('20160905074620'), ('20160905184110'), ('20160905191312');
+INSERT INTO schema_migrations (version) VALUES ('20160903232354'), ('20160903232720'), ('20160903232738'), ('20160903232821'), ('20160903232834'), ('20160904000429'), ('20160905074620'), ('20160905184110'), ('20160905191312'), ('20160906160902');
 
 
