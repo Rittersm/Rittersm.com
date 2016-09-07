@@ -451,6 +451,7 @@ font-size: 20px;
 }
 
 .footer-bottom{
+  padding-top: 10px;
   background-color: $slate;
   border-top: 4px solid $light-slate;
 }
@@ -466,18 +467,18 @@ font-size: 20px;
 .admin h5{
   color: $amber;
   font-family: 'Amatic SC', cursive;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-.footer-bottom li h5,
+.footer-bottom li h4,
 .footer-bottom li{
   color: $amber;
   font-family: 'Amatic SC', cursive;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .footer-bottom li i{
-  font-size: 25px !important;
+  font-size: 35px !important;
 }
 
 .modal-content{
@@ -546,4 +547,32 @@ font-size: 20px;
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     font-size: 22px;
   }
+}
+
+.footer-cat{
+  margin-bottom: 20px;
+}
+
+.file-button-one{
+  background-color: $light-slate;
+  width: 100px;
+  padding: 0px;
+  margin-right: 20px;
+}
+.file-button{
+  background-color: $light-slate;
+  padding: 0px;
+  width: 100px;
+}
+
+.file-button-one:hover,
+.file-button:hover{
+  border-color: $amber;
+}
+
+.file-button:active,
+.file-button:focus,
+.file-button-one:active,
+.file-button-one:focus{
+  background-color: $light-slate;
 }
