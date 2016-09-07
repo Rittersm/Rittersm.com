@@ -1,0 +1,17 @@
+<h3>You have a new Contact!</h3>
+<br>
+<h3>From: <%= @contact.name %></h3>
+<br>
+<h4>Email: <%= @contact.email %></h4>
+<br>
+<% if @contact.phone %>
+  <h4>Phone: <%= @contact.phone %></h4>
+  <br>
+<% end %>
+<% if @contact.company %>
+  <h4>Company: <%= @contact.company %></h4>
+  <br>
+<% end %>
+<% if @contact.message %>
+  <h4>Message: <%= simple_format(@contact.message) %></h4>
+<% end %>

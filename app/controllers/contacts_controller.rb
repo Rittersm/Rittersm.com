@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      ContactNotifierMailer.contact_email(@contact).deliver
       render json: @contact, status: :created
     else
       render json: @contact.errors.full_messages, status: :unprocessable_entity

@@ -5,6 +5,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'kaminari'
+gem 'figaro'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem "font-awesome-rails"
 gem 'rails_12factor'
