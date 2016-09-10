@@ -440,6 +440,8 @@ font-size: 20px;
 }
 .btn-primary:hover{
   border-color: $amber;
+  background-color: $light-slate;
+  color: $amber;
 }
 .btn-primary{
   background-color: $light-slate;
