@@ -11,6 +11,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Piwik -->
     <script type="text/javascript">
+      var visitor_id;
+      var getVisitor = function() {
+        visitor_id = this.getVisitorId();
+        console.log("VisitorId: " + visitor_id);
+      };
       var _paq = _paq || [];
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
