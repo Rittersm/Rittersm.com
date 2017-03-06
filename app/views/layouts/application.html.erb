@@ -10,24 +10,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Piwik -->
-      <script type="text/javascript">
+    <script type="text/javascript">
         var visitor_id;
         var getVisitor = function() {
-          visitor_id = this.getVisitorId();
-          console.log("VisitorId: " + visitor_id);
-          };
+            console.log("Get ready to call!");
+            visitor_id = this.getVisitorId();
+            console.log("After call!");
+            console.log("VisitorId: " + visitor_id);
+        };
         var _paq = _paq || [];
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="//drivendataload2.eastus.cloudapp.azure.com/";
-              _paq.push(['setTrackerUrl', u+'piwik.php']);
-              _paq.push(['setSiteId', '1']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-              g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            })();
-      </script>
-      <noscript><p><img src="//tracking.drivendataconsulting.com/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="//drivendataload2.eastus.cloudapp.azure.com/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '1']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
     <!-- End Piwik Code -->
   </head>
 
