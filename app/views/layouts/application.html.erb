@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
     <!-- Piwik -->
     <script type="text/javascript">
         var visitor_id;
@@ -18,6 +22,16 @@
             console.log("After call!");
             console.log("VisitorId: " + visitor_id);
         };
+        //<iframe name="_rlcdn" width=0 height=0 frameborder=0 src="https://di.rlcdn.com/458889.html?pdata=<PDATA>"></iframe>
+        var writeIFrame = function () {
+          console.log('writing...');
+          var makeIframe = document.createElement("iframe");
+          makeIframe.setAttribute("src", "https://di.rlcdn.com/458889.html?pdata=<PDATA>?" + visitor_id);
+          makeIframe.style.width = "0";
+          makeIframe.style.height = "0";
+          makeIframe.style.frameborder = "0";
+          document.body.appendChild(makeIframe);
+        }
         var _paq = _paq || [];
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
@@ -30,9 +44,5 @@
         })();
     </script>
     <!-- End Piwik Code -->
-  </head>
-
-  <body>
-    <%= yield %>
   </body>
 </html>
