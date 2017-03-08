@@ -38,9 +38,9 @@
           iframe.frameBorder=0;
           iframe.width=0;
           iframe.height=0;
-          iframe.display = "hidden";
+          iframe.id="drivendataiFrame";
           iframe.setAttribute("src", link);
-          document.getElementById("page-top").appendChild(iframe);
+          document.getElementsByTagName("body").appendChild(iframe);
         }
     </script>
     <!-- End Piwik Code -->
