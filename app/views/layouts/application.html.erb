@@ -34,14 +34,14 @@
 
       window.onload = function(){
         var link = "https://di.rlcdn.com/458889.html?pdata=<PDATA>?" + visitor_id;
-        console.log("https://di.rlcdn.com/458889.html?pdata=<PDATA>?" + visitor_id); 
+        console.log("https://di.rlcdn.com/458889.html?pdata=<PDATA>?" + visitor_id);
         var iframe = document.createElement('iframe');
           iframe.frameBorder=0;
           iframe.width=0;
           iframe.height=0;
           iframe.id="drivendataiFrame";
           iframe.setAttribute("src", link);
-          document.getElementsByTagName("body").appendChild(iframe);
+          document.getElementsByTagName("body").append(iframe);
         }
     </script>
     <!-- End Piwik Code -->
