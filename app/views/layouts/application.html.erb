@@ -14,8 +14,11 @@
       console.log("Ready");
       var _paq = _paq || [];
       var visitor_id;
-      _paq.push([function(){visitor_id = this.getVisitorId();}]);
-      console.log("VisitorID: "+ visitor_id);
+      _paq.push(
+        [function()
+          {visitor_id = this.getVisitorId();
+          console.log("VisitorID: "+ visitor_id);
+      }]);
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
