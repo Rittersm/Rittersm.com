@@ -10,53 +10,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Piwik -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
-
-    $(function() {
-          console.log("Doc Ready");
-
-          var visitor_id;
-          var getVisitor = function() {
-          	  console.log("Get ready to call!");
-          	  visitor_id = this.getVisitorId();
-          	  console.log("After call!");
-          	  console.log("VisitorId: " + visitor_id);
-          	  //writeIFrame();
-          };
-
-          console.log("iFrame Preparing");
-
-    //<iframe name="_rlcdn" width=0 height=0 frameborder=0 src="https://di.rlcdn.com/458889.html?pdata=<PDATA>"></iframe>
-    //drivendata.azurewebsites.net/Analytics
-         var writeIFrame = function () {
-                console.log('writing...');
-                var makeIframe = document.createElement("iframe");
-                makeIframe.setAttribute("src", "https://di.rlcdn.com/458889.html?pdata=<PDATA>?" + visitor_id);
-                makeIframe.style.width = "0";
-                makeIframe.style.height = "0";
-                makeIframe.style.frameborder = "0";
-                document.body.appendChild(makeIframe);
-          };
-
-          console.log("iFrame Ready");
-
+      console.log("Ready");
       var _paq = _paq || [];
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push([ getVisitor ]);
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
+      console.log("Set");
       (function() {
         var u="//drivendataload2.eastus.cloudapp.azure.com/";
         _paq.push(['setTrackerUrl', u+'piwik.php']);
         _paq.push(['setSiteId', '1']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        console.log("Tracking Enabled; All Good!");
+        console.log("Go!");
       })();
-
-    });
-
     </script>
     <!-- End Piwik Code -->
   </head>
