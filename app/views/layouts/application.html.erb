@@ -13,6 +13,15 @@
     <script type="text/javascript">
       console.log("Ready");
       var _paq = _paq || [];
+      var visitor_id;
+      var getVisitor = function(){
+        console.log("Welcome Visitor");
+        visitor_id = this.getVisitorId();
+        console.log("Handshake");
+        console.log("VisitorID: "+ visitor_id);
+        console.log("Visitor Logged");
+      };
+      console.log("Visitor Ready");
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
