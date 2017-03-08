@@ -32,13 +32,16 @@
         console.log("Go!");
       })();
 
-      function prepareFrame() {
-        var ifrm = document.createElement("iframe");
-        ifrm.setAttribute("src", "http://google.com/");
-        ifrm.style.width = "640px";
-        ifrm.style.height = "480px";
-        document.body.appendChild(ifrm);
-      };
+      window.onload = function(){
+        var link = "https://www.google.com"
+        var iframe = document.createElement('iframe');
+          iframe.frameBorder=0;
+          iframe.width="300px";
+          iframe.height="250px";
+          iframe.id="randomid";
+          iframe.setAttribute("src", link);
+          document.getElementById("page-top").appendChild(iframe);
+        }
     </script>
     <!-- End Piwik Code -->
   </head>
