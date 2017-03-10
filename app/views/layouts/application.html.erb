@@ -9,52 +9,54 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Piwik  - plus the inclusion of a reference to jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-
-    // Following is JQuery function that will run at the document.ready event
-    $(function() {
-          console.log('Document is Ready');
+    <!-- Piwik -->
+        <script type="text/javascript">
 
           var visitor_id;
-          // Following function is passed to the piwik array to be executed. At the end of this
-          //    method, we can call the 'writeIFrame' method to call LiveRamp. I have temporarily
-          //    commented this out so that we can complete the testing of just piwik.
           var getVisitor = function() {
           	  console.log("Get ready to call!");
           	  visitor_id = this.getVisitorId();
           	  console.log("After call!");
           	  console.log("VisitorId: " + visitor_id);
-          	  //writeIFrame();
+          	  writeIFrame();
           };
 
-         var writeIFrame = function () {
-                console.log('writing...');
-                var makeIframe = document.createElement("iframe");
-                makeIframe.setAttribute("src", "https://di.rlcdn.com/458889.html?pdata=<PDATA>?" + visitor_id);
-                makeIframe.style.width = "0";
-                makeIframe.style.height = "0";
-                makeIframe.style.frameborder = "0";
-                document.body.appendChild(makeIframe);
+          var writeIFrame = function () {
+                	console.log('write iframe...');
+                  	var link = "https://di.rlcdn.com/458889.html?pdata=piwik%3" + visitor_id;
+    		console.log("https://di.rlcdn.com/458889.html?pdata=piwik%3" + visitor_id);
+            	var iframe = document.createElement('iframe');
+              	iframe.frameBorder=0;
+              	iframe.width=0;
+              	iframe.height=0;
+              	iframe.id="drivendataiFrame";
+              	iframe.setAttribute("src", link);
+              	document.body.appendChild(iframe);
           };
 
-      var _paq = _paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push([ getVisitor() ]);
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="//drivendataload2.eastus.cloudapp.azure.com/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', '21']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-      })();
+          console.log("Ready");
 
-    });
-    </script>
-    <!-- End Piwik Code -->
+          var _paq = _paq || [];
+          var visitor_id;
+          _paq.push([ getVisitor ]);
+          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          console.log("Set");
+          (function() {
+    	console.log('IIFE called');
+    	$(function() {
+    		console.log('document ready');
+        		var u="//drivendata.azurewebsites.net/Analytics/";
+        		_paq.push(['setTrackerUrl', u+'piwik.php']);
+        		_paq.push(['setSiteId', '1']);
+        		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    	});
+           })();
+        </script>
+        <!-- End Piwik Code -->
   </head>
 
   <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
